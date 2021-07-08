@@ -1,79 +1,75 @@
 public class App {
 
+    // Atributte of the class
     private String nombre;
-    private int identificacion;
+    private int id;
     private double estatura;
     private float peso;
     private char sexo;
     private boolean estaVacunado;
 
-    public static void main2(String[] args) {
-        System.out.println("Hello world!");
-        //operadores aritmeticos
+    // Main method
+    public static void main(String[] args) {
+        System.out.println("Dani");
+        // Operadores aritmeticos
         int resultado = 45 + 12;
         resultado = 45 - 12;
         resultado = 45 * 12;
         resultado = 45 / 12;
         resultado = 45 % 12;
-        //operadores unarios
+
+        // operadores unarios
         resultado++;
-        resultado = resultado--;
+        resultado--;
+        // Algebra booleana
         boolean respuesta = true;
-        //!respuesta;
-        //algebra booleana
         respuesta = 5 < 8;
         respuesta = 5 > 8;
         respuesta = 5 >= 8;
         respuesta = 5 <= 8;
         respuesta = 5 == 8;
         respuesta = 5 != 8;
-        //operadores logicos
+
+        // operadores logicos
         respuesta = 5 < 8 && 4 >= 6;
         respuesta = 5 < 8 || 4 >= 6;
-        //operadores bit a bit
-        // &
-        // |
-        // ^
-        //estructuras de control
-        //---condicionales---
-        if (5 != 10) {
-            //bloque de código
+
+        // opeadores bit a bit
+        // &, |, ^
+
+        // Estructuras de control
+        if (respuesta) {
+            // bloque de codigo
+        } else if (!respuesta) {
+            // bloque de codigo
+        } else {
+            // bloque de codigo
         }
 
-        if (respuesta) {
-            //bloque de código
-        } else if(!respuesta){
-            //bloque de código
-        } else {
-            //bloque de código
-        }
         int llave = 2;
         switch (llave) {
-            case 1:
-                //bloque de código
-                break;
             case 2:
-                //bloque de código
+
                 break;
-        
+
             default:
                 break;
         }
-        //---ciclos, repetitivas, bucles---
-        while (llave > 5) {
-            //bloque de código 
-        }
-        
-        do {
-            //bloque de código             
-        } while (llave > 5);
 
-        for (String string : args) {
-            //bloue de código
+        // --Ciclos, repetitivas, blucles --
+        while (respuesta) {
+            // bloque de codigo
         }
-        // declaración de una variable ; condición ; incremento 
+        do {
+            // bloque de codigo
+        } while (respuesta);
+        // declaracion de variable; condicion; incremento
         for (int i = 0; i < args.length; i++) {
-            
+            // bloque de codigo
         }
+        for (String string : args) {
+            // bloque de codigo
+        }
+
     }
 }
