@@ -1,31 +1,27 @@
 package model;
 
-public class Owner extends User {
-    private Wallet wallet;
-
-    public Owner(String nombre) {
+public class Owner extends User { // relación de herencia
+    private Wallet wallet; // relación entre clase Owner y clase Wallet
+    
+    public Owner(String name) {
         super();
         wallet = new Wallet();
-        setNombre(nombre);
+        setName("Andrés");
     }
 
     public Wallet getWallet() {
         return wallet;
     }
 
-    public String compararWallet(Wallet otraWallet){
-        Wallet miWallet = getWallet();
+    public String compareWallet(Wallet compareWallet){
+        Wallet myWallet = getWallet();
 
-        if(miWallet.getSaldo() > otraWallet.getSaldo() ){
-            return "Mi Wallet tiene más saldo";
+        if (myWallet.getBalance() > compareWallet.getBalance()) {
+            return "My wallet has more balance";
+        } else if (myWallet.getBalance() == compareWallet.getBalance()) {
+            return "Both wallets have the same balance";
+        } else {
+            return "The other wallet has more balance";
         }
-        else if(miWallet.getSaldo() == otraWallet.getSaldo()){
-            return "Ambas wallet tienen el mismo saldo";
-        }
-        else if(miWallet.getSaldo() < otraWallet.getSaldo()){
-            return "La otra wallet tiene más saldo";
-        }
-        else{ return "Hubo un error"; }//java solicita esto por que si
     }
-
 }

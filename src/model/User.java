@@ -1,22 +1,22 @@
 package model;
 
 public class User {
-    private String nombre;
-    private int estado;
+    private int status;
+    private String name;
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public int getEstado() {
-        return estado;
+    public int getStatus() {
+        return status;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

@@ -1,51 +1,59 @@
 package model;
 
 public class Wallet {
+    
+    public static final int MAX_CAPACITY = 1000000; // Constantes: acceso público, estáticas, final es para asignar un valor, siempre mayus
+    private boolean hasLimit;
+    private int balance; // Saldo
+    private int goal;
 
-    public static final int CAPACIDAD_MAXIMA = 1000000;
-    private int saldo;
-    private boolean tieneLimite;
-
-    public Wallet() {
+    // Método constructor (ctor): genera un objeto asociado a la clase
+    public Wallet() {  
         super();
-        saldo = 0;
-        tieneLimite = true;
-    }
-
-    public String saveMoney(int valor) {
-        if (valor < 0) {
-            return "Debe digitar una cantidad válida";
-        }
-        if(tieneLimite && valor+saldo > CAPACIDAD_MAXIMA  ){
-            return "El saldo no puede superar la capacidad máxima";
-        }
-        saldo += valor;
-        return "Transacción exitosa!";
+        balance = 0;
+        hasLimit = true;
+        goal = 5000000;
     }
     
-    public String takeMoney(int valor){
-        if(saldo < valor){
-            return "El monto supera el saldo";
+    // Método que retorna un str, sirve para ingresar dinero
+    public String saveMoney(int value){ 
+        if (value < 0) {
+            return "You must enter a valid quantity";
+        } else if (hasLimit && value + balance > MAX_CAPACITY) {
+            return "Balance cannot exceed the maximum capcity";
+        } else {
+            balance += value;
+            return "Succesful transaction";
         }
-        saldo -= valor; // saldo = saldo - valor;
-        return "Transacción exitosa!";
+    }
+    
+    // Método que retorna un str, sirve para sacar dinero
+    public String takeMoney(int value) { 
+        if (value > balance) {
+            return "The amount is greater than the balance";
+        } else {
+            balance -= value;
+            return "Succesful transaction";
+        }
     }
 
-    public int getSaldo(){
-        return saldo;
+    // Método de accesibilidad: devuelve el valor de un atributo
+    public int getBalance() { 
+        return balance;
     }
 
+    //
     public String breakLimits(){
-        if(!tieneLimite){
-            return "Tu cuenta ya estaba configurada sin limites";
+        if (hasLimit = false) {  //!haslimit
+            return "Your account hasn't limits";
+        } else {
+            if (MAX_CAPACITY - balance <= 100000){
+                hasLimit = false;
+                return "Your account hasn't limits anymore";
+            } else {
+                return "You are missing "+ (100000 - (MAX_CAPACITY - balance)) + " to unlock the limit of your account";
+            }
         }
-        if(saldo >= CAPACIDAD_MAXIMA - 100000){
-            tieneLimite = false;
-            return "Tu cuenta ya no tiene limites!";
-        }
-        return "Te hacen falta "+ ((CAPACIDAD_MAXIMA - 100000) - saldo);
-    }  
-    
-    
 
+    }
 }
