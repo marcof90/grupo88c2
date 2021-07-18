@@ -3,25 +3,25 @@ package test;
 import model.Owner;
 
 public class Test {
-
-    public void escenarioOwner(){
-        Owner owner1 = new Owner("Sandy");
-        boolean test1 = assertTrue("Sendy", owner1.getNombre());        
-        // (condicion)? opc1 : opc2
-        System.out.println((test1)? "Paso": "No paso");
+    public void scenarioOwner(){
+        Owner owner1 = new Owner("Andrés");
+        boolean test1 = assertTrue("Andrés", owner1.getName());
+        System.out.println((test1) ? "Pasa" : "No pasa");
     }
 
-    public boolean assertTrue(int esperado, int obtenido){
-        if(esperado > obtenido){
+    public boolean assertTrue(int expectative, int reality) {
+        if (expectative > reality) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
-
-    public boolean assertTrue(String esperado, String obtenido){
-        if(esperado.equalsIgnoreCase(obtenido)){
+    
+    public boolean assertTrue(String expectative, String reality) {
+        if (expectative.equalsIgnoreCase(reality)) {
             return true;
-        }
-        return false;
+        } else {
+            return false;
+        }   
     }
 }

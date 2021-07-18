@@ -2,11 +2,10 @@ package view;
 
 import test.Test;
 
-public class VistaTest {
+public class TestView {
     
     public static void main(String[] args) {
         Test test = new Test();
-        test.escenarioOwner();        
+        test.scenarioOwner();
     }
-
 }
