@@ -1,18 +1,21 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Wallet {
     
     public static final int MAX_CAPACITY = 1000000; // Constantes: acceso público, estáticas, final es para asignar un valor, siempre mayus
     private boolean hasLimit;
     private int balance; // Saldo
-    private int goal;
+    private ArrayList<Transaction> transactions; // ArrayList genérico con <> se guarda un solo tipo de datos
 
     // Método constructor (ctor): genera un objeto asociado a la clase
     public Wallet() {  
         super();
         balance = 0;
         hasLimit = true;
-        goal = 5000000;
+        transactions = new ArrayList<>(); // Lista vacía 
+        
     }
     
     // Método que retorna un str, sirve para ingresar dinero
@@ -23,6 +26,8 @@ public class Wallet {
             return "Balance cannot exceed the maximum capcity";
         } else {
             balance += value;
+            Transaction transaction = new Transaction(value, "today", 1);
+            transactions.add(transaction); // agrega el objeto transaction al ArrayList transactions como ingreso
             return "Succesful transaction";
         }
     }
@@ -33,6 +38,8 @@ public class Wallet {
             return "The amount is greater than the balance";
         } else {
             balance -= value;
+            Transaction transaction = new Transaction(value, "today", 2);
+            transactions.add(transaction); // agrega el objeto transaction al ArrayList transactions como egreso
             return "Succesful transaction";
         }
     }
@@ -55,5 +62,11 @@ public class Wallet {
             }
         }
 
+    }
+
+    public void cashBalance() {
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction);
+        }
     }
 }
