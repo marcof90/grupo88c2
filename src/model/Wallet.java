@@ -1,15 +1,20 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Wallet {
     public static final int TOPE_TRANSACCION = 200000;
     public static final int CAPACIDAD_MAXIMA = 1000000;// constante, se declaran en mayusculas y separados por _
     private int saldo;
     private boolean tieneLimite;
 
+    private ArrayList<Transaction> transactions;
+
     public Wallet() {
         super();
         saldo = 0;
         tieneLimite = true;
+        transactions = new ArrayList<>();
     }
 
     public String saveMoney(int valor) {
@@ -20,6 +25,8 @@ public class Wallet {
             return "Él valor no puede superar la capacidad máxima";
         }
         saldo += valor;
+        Transaction transaction = new Transaction(valor, "Hoy", 1);
+        transactions.add(transaction);
         return "Transacción Exítosa";
     }
 
@@ -28,6 +35,8 @@ public class Wallet {
             return "El monto supera el saldo";
         }
         saldo -= valor;
+        Transaction transaction = new Transaction(valor, "Hoy", 2);
+        transactions.add(transaction);
         return "Transacción exitosa";
     }
 
@@ -45,6 +54,12 @@ public class Wallet {
         }
         return "Te hacen falta " + ((CAPACIDAD_MAXIMA - 100000) - saldo);
 
+    }
+
+    public void getBalance() {
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction);
+        }
     }
 
     /*
