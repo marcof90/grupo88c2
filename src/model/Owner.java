@@ -13,6 +13,14 @@ public class Owner extends User {
         return wallet;
     }
 
+    public String transferencia(Wallet walletTransferencia ,int valorTransferencia){
+        walletTransferencia.setSaldo1(valorTransferencia);
+        Wallet estaWallet =getWallet();
+        estaWallet.setSaldo2(valorTransferencia);
+
+        return "transferencia exitosa";
+    }
+
     public String compararWallet(Wallet otraWallet){
         Wallet miWallet = getWallet();
 

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Wallet {
 
     public static final int CAPACIDAD_MAXIMA = 1000000;
+    public static final int MONTO_MAXIMO = 200000;
+    public static final double TAZA_TRANSFERENCIA = 0.02;
     private int saldo;
     private boolean tieneLimite;
 
@@ -15,6 +17,14 @@ public class Wallet {
         saldo = 0;
         tieneLimite = true;
         transactions = new ArrayList<>();
+    }
+
+    public void setSaldo1(int valor3){
+        saldo-=valor3;
+    }
+
+    public void setSaldo2(int valor3){
+        saldo+=valor3-(valor3*TAZA_TRANSFERENCIA);
     }
 
     public String saveMoney(int valor) {
