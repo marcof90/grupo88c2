@@ -31,8 +31,8 @@ public class Wallet {
         if (valor < 0) {
             return "Debe digitar una cantidad válida";
         }
-        if(tieneLimite && valor+saldo > CAPACIDAD_MAXIMA  ){
-            return "El saldo no puede superar la capacidad máxima";
+        if((tieneLimite && valor+saldo > CAPACIDAD_MAXIMA) || (tieneLimite && valor+saldo > MONTO_MAXIMO)  ){
+            return "El saldo no puede superar la capacidad máxima ni el monto maximo";
         }
         saldo += valor;
         Transaction transaction = new Transaction(valor, "hoy", 1);
@@ -41,8 +41,8 @@ public class Wallet {
     }
     
     public String takeMoney(int valor){
-        if(saldo < valor){
-            return "El monto supera el saldo";
+        if((saldo < valor) || (valor>MONTO_MAXIMO)){
+            return "El monto supera el saldo o el monto maximo";
         }
         saldo -= valor; // saldo = saldo - valor;
         Transaction transaction = new Transaction(valor, "hoy", 2);

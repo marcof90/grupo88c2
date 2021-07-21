@@ -18,6 +18,8 @@ public class UserView {
         System.out.println(cliente3.getWallet().saveMoney(100000));
         System.out.println(cliente4.getWallet().saveMoney(10000));
         cliente4.transferencia(cliente3.getWallet(), valor3);
+        System.out.println(cliente3.getWallet().getSaldo());
+        System.out.println(cliente4.getWallet().getSaldo());
 
         /**
          *Owner cliente1 = new Owner("Juan");
