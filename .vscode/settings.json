@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/jaiber/Documents/java/mysql-connector-java-8.0.26.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src",
+        "lib"
+    ]
+}
