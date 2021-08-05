@@ -28,4 +28,10 @@ public class Owner extends User {
         else{ return "Hubo un error"; }//java solicita esto por que si
     }
 
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Nombre: "+getNombre();
+    }
+
 }
