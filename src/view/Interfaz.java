@@ -27,6 +27,7 @@ public class Interfaz extends JFrame {
 
         add(panelOpciones, BorderLayout.SOUTH);
         add(panelClientes, BorderLayout.CENTER);
+        updateListClientes();
     }
 
     public void addOwner(String nombre) {
