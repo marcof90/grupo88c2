@@ -38,10 +38,8 @@ public class JavaMySQLService {
             password = prop.getProperty("password");
             ins.close();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -53,7 +51,6 @@ public class JavaMySQLService {
             boolean valid = connect.isValid(50000);
             System.out.println(valid ? "Connected":"Failed");
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -66,7 +63,6 @@ public class JavaMySQLService {
             Statement stmt = connect.createStatement();
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -79,7 +75,6 @@ public class JavaMySQLService {
             Statement stmt = connect.createStatement();
             rs = stmt.executeQuery(sql);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return rs;

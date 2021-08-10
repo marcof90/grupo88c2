@@ -29,7 +29,6 @@ public class Controller {
                 fillUsersData(dbService.getUsersDB());
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -41,7 +40,6 @@ public class Controller {
                 owners.add(owner);
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -67,6 +65,5 @@ public class Controller {
         }
         return listado;
     }
-
 
 }
