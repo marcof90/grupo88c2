@@ -53,7 +53,6 @@ public class JavaMySQLService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     public void insertUser(String nombre) {
@@ -70,7 +69,6 @@ public class JavaMySQLService {
     public ResultSet getUsersDB() {
         ResultSet rs = null;
         String sql = "SELECT * FROM users";
-
         try {
             Statement stmt = connect.createStatement();
             rs = stmt.executeQuery(sql);
