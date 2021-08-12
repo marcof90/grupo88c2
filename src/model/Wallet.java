@@ -7,6 +7,7 @@ public class Wallet {
     public static final int CAPACIDAD_MAXIMA = 1000000;
     private int saldo;
     private boolean tieneLimite;
+    private int id;
 
     private ArrayList<Transaction> transactions;
 
@@ -15,6 +16,26 @@ public class Wallet {
         saldo = 0;
         tieneLimite = true;
         transactions = new ArrayList<>();
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public String saveMoney(int valor) {

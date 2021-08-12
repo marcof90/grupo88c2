@@ -55,5 +55,17 @@ public class Interfaz extends JFrame {
     public void updateListClientes() {
         panelClientes.updateListClientes(controlador.getListClientes());
     }
+
+    public void updatePanelWallet(int id) {
+        panelWallet.updateWallet(controlador.getWalletUser(id).getWallet());
+    }
     
+    public void fillTransactionsData(int id) {
+        controlador.fillTransactionsData(id);
+        updateListaTransactions(id);
+    }
+
+    public void updateListaTransactions(int id) {
+        panelTransactions.updateListaTransactions(controlador.getDataTransactions(id));
+    }
 }

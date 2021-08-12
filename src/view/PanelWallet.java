@@ -4,6 +4,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import model.Wallet;
+
 import java.awt.GridLayout;
 
 public class PanelWallet extends JPanel{
@@ -21,17 +24,23 @@ public class PanelWallet extends JPanel{
         interfaz = i;
 
         JPanel panelAuxiliar = new JPanel();
+        panelAuxiliar.setLayout(new GridLayout(4, 1));
         panelAuxiliar.setBorder(new EmptyBorder(20, 20, 10, 10));
 
-        lblSaldo = new JLabel();
-        lblId = new JLabel();
-        lblTieneLimite = new JLabel();
+        lblSaldo = new JLabel("Saldo:");
+        lblId = new JLabel("ID:");
+        lblTieneLimite = new JLabel("Tiene Limite:");
 
         panelAuxiliar.add(lblSaldo);
         panelAuxiliar.add(lblId);
         panelAuxiliar.add(lblTieneLimite);
 
         add(panelAuxiliar);
+    }
+
+    public void updateWallet(Wallet w) {
+        lblSaldo.setText("Saldo: "+w.getSaldo());
+        lblId.setText("ID: "+w.getId());
     }
 
 }
