@@ -5,6 +5,7 @@
     ],
     "java.project.sourcePaths": [
         "src",
-        "lib"
+        "lib",
+        "controller"
     ]
 }
